@@ -1,12 +1,49 @@
 header {
-    background-color: #fff;
-    margin: auto -16px;
-    padding: 16px 55px;
-    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
-  }
+  background-color: #fff;
+  padding: 16px 55px;
+  box-shadow: 0 0 5px 0 rgb(201, 201, 201);
+}
 
-  header p {
-    color: #000;
-    font-weight: 200;
-    margin-bottom: 0;
-  }
+header p {
+  color: #000;
+  font-weight: 200;
+  margin-bottom: 0;
+}
+
+form.input-area {
+  position: relative;
+  width: 480px;
+  margin: 30px auto 20px auto;
+  background: #fff;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 1px 5px rgb(201, 201, 201);
+
+}
+
+form.input-area input,
+form.input-area textarea {
+  width: 100%;
+  border: none;
+  padding: 4px;
+  outline: none;
+  cursor: auto;
+  font-size: 1.2em;
+  font-family: inherit;
+  resize: none;
+}
+
+textarea::-webkit-scrollbar {
+  width: 10px;
+}
+
+textarea::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 3px rgb(201, 201, 201);
+  box-shadow: inset 0 0 3px rgb(201, 201, 201);
+  border-radius: 15px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background-color: #babac0;
+  border-radius: 16px;
+}
