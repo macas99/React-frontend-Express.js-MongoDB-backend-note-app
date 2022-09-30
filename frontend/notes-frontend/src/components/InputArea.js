@@ -1,4 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+import Fab from "@material-ui/core/Fab";
+import Zoom from "@material-ui/core/Zoom";
 
 function InputArea() {
   const [toggled, setToggled] = useState(false);
@@ -22,6 +25,15 @@ function InputArea() {
     setToggled(true);
   }
 
+  function onFormSubmit(event) {
+    event.preventDefault();
+    setToggled(false);
+    setNote({
+      title: "",
+      content: ""
+    });
+  }
+
   function useToggleOffOnOutsideClick(ref) {
     useEffect(() => {
       function handleClickOutside(event) {
@@ -41,7 +53,7 @@ function InputArea() {
 
   return (
     <div className="container">
-      <form className="input-area" ref={wrapperRef}>
+      <form name="search-form" id="search-form" className="input-area" ref={wrapperRef} onSubmit={onFormSubmit}>
 
         {toggled &&
           <input
@@ -61,6 +73,16 @@ function InputArea() {
           placeholder="Take a note..."
         />
 
+        {toggled &&
+          <div className="text-end">
+            <button type="submit">
+              <Zoom in={toggled}>
+                <AddCircleIcon />
+              </Zoom>
+            </button>
+          </div>
+
+        }
       </form>
     </div>
   );
