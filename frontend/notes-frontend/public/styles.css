@@ -1,0 +1,12 @@
+header {
+    background-color: #fff;
+    margin: auto -16px;
+    padding: 16px 55px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  header p {
+    color: #000;
+    font-weight: 200;
+    margin-bottom: 0;
+  }
