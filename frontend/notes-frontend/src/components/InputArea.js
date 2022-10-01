@@ -1,7 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
 import AddCircleIcon from '@mui/icons-material/AddCircle';
-import Fab from "@material-ui/core/Fab";
-import Zoom from "@material-ui/core/Zoom";
 
 function InputArea() {
   const [toggled, setToggled] = useState(false);
@@ -76,9 +74,7 @@ function InputArea() {
         {toggled &&
           <div className="text-end">
             <button type="submit">
-              <Zoom in={toggled}>
-                <AddCircleIcon />
-              </Zoom>
+              <AddCircleIcon />
             </button>
           </div>
 
