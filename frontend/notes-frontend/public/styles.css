@@ -54,14 +54,20 @@ textarea::-webkit-scrollbar-thumb {
   border-radius: 16px;
 }
 
+.notes-area {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
 .note {
   background: #fff;
   border-radius: 15px;
   box-shadow: 0 2px 5px #ccc;
   padding: 10px;
   width: 240px;
-  margin: 30px 10px 0;
-  float: left;
+  height: fit-content;
+  margin: 10px 10px;
 }
 
 .note h1 {
@@ -75,3 +81,16 @@ textarea::-webkit-scrollbar-thumb {
   white-space: pre-wrap;
   word-wrap: break-word;
 }
+
+.my-masonry-grid {
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: flex;
+
+  width: auto;
+}
+.my-masonry-grid_column {
+
+  background-clip: padding-box;
+}
+
