@@ -19,10 +19,10 @@ function NotesArea() {
 
   const breakpoints = {
     default: 5,
-    1325: 4,
-    1045: 3,
-    750: 2,
-    500: 1
+    1335: 4,
+    1055: 3,
+    795: 2,
+    505: 1
 
   }
 

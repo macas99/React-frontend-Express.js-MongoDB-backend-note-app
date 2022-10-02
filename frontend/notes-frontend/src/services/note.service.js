@@ -9,9 +9,12 @@ const http = axios.create({
 
 class NoteService {
 
-
   getAll() {
     return http.get();
+  }
+
+  saveNote(note)  {
+    return http.post("/", note);
   }
 
 }

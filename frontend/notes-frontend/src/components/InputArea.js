@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import AddCircleIcon from '@mui/icons-material/AddCircle';
+import noteService from "../services/note.service";
 
 function InputArea() {
   const [toggled, setToggled] = useState(false);
@@ -25,6 +26,19 @@ function InputArea() {
 
   function onFormSubmit(event) {
     event.preventDefault();
+
+    const newNote = {
+      ...note
+    }
+
+    noteService.saveNote(newNote)
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch(e => {
+        console.log(e);
+      });
+
     setToggled(false);
     setNote({
       title: "",
