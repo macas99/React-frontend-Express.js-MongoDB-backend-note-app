@@ -9,7 +9,7 @@ function NotesArea(props) {
     1335: 4,
     1055: 3,
     795: 2,
-    505: 1
+    560: 1
   }
 
   return (

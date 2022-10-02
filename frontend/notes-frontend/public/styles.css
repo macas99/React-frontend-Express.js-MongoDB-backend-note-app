@@ -108,12 +108,21 @@ textarea::-webkit-scrollbar-thumb {
   border-color: #babac0;
 }
 
-@media only screen and (max-width: 505px) {
+@media only screen and (max-width: 560px) {
+  header {
+    padding: 16px 25px;
+  }
+
   form.input-area {
     width: 90vw;
   }
 
   .note {
     width: 90vw;
+  }
+
+  .my-masonry-grid {
+    margin: 0;
+    padding: 0;
   }
 }
