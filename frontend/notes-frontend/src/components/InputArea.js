@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import noteService from "../services/note.service";
 
-function InputArea() {
+function InputArea(props) {
   const [toggled, setToggled] = useState(false);
   const [note, setNote] = useState({
     title: "",
@@ -34,6 +34,7 @@ function InputArea() {
     noteService.saveNote(newNote)
       .then(response => {
         console.log(response.data);
+        props.refreshNotes();
       })
       .catch(e => {
         console.log(e);
