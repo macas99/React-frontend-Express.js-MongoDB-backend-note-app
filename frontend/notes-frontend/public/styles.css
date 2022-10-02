@@ -63,11 +63,12 @@ textarea::-webkit-scrollbar-thumb {
 .note {
   background: #fff;
   border-radius: 15px;
-  box-shadow: 0 2px 5px #ccc;
+  box-shadow: 0 1px 5px rgb(201, 201, 201);
   padding: 10px;
   width: 240px;
   height: fit-content;
   margin: 10px 10px;
+  border: 1px solid transparent;
 }
 
 .note h1 {
@@ -82,15 +83,28 @@ textarea::-webkit-scrollbar-thumb {
   word-wrap: break-word;
 }
 
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 .my-masonry-grid {
-  display: -webkit-box; /* Not needed if autoprefixing */
-  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: -webkit-box;
+  /* Not needed if autoprefixing */
+  display: -ms-flexbox;
+  /* Not needed if autoprefixing */
   display: flex;
 
   width: auto;
 }
-.my-masonry-grid_column {
 
+.my-masonry-grid_column {
   background-clip: padding-box;
 }
 
+.note:hover {
+  border-style: solid;
+  border-color: #babac0;
+}
