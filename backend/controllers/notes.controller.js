@@ -1,7 +1,7 @@
 let Note = require('../models/Note');
 
 const getAll = function (req, res) {
-    Note.find()
+    Note.find().sort([['updatedAt', -1]])
         .then(notes => res.json(notes))
         .catch(err => res.status(400).json('Error: ' + err));
 }
