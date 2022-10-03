@@ -3,9 +3,15 @@ import Navbar from './Navbar'
 import InputArea from './InputArea'
 import NotesArea from './NotesArea';
 import noteService from "../services/note.service";
+import NoteModal from './NoteModal';
 
 function App() {
   const [notes, setNotes] = useState([]);
+  const [noteModal, setModal] = useState({
+    isOpen: false,
+    title: "",
+    content: ""
+  });
 
   useEffect(() => {
     refreshNotes()
@@ -17,11 +23,34 @@ function App() {
       .catch(e => console.log(e));
   }
 
+  function openNote(note) {
+    setModal({
+      isOpen: true,
+      title: note.title,
+      content: note.content
+    });
+      document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    if (noteModal.isOpen) {
+      setModal({
+        isOpen: false,
+        title: "",
+        content: ""
+      });
+    }
+    document.body.style.overflow = 'unset';
+  }
+
   return (
     <div>
       <Navbar />
       <InputArea refreshNotes={refreshNotes} />
-      <NotesArea notes={notes} />
+      <NotesArea notes={notes} openNote={openNote} />
+      {noteModal.isOpen && (
+        <NoteModal title={noteModal.title} content={noteModal.content} closeModal={closeModal} />
+      )}
     </div>
   );
 }

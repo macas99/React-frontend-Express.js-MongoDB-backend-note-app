@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Note from "./Note";
 import Masonry from 'react-masonry-css'
 
@@ -12,6 +12,10 @@ function NotesArea(props) {
     560: 1
   }
 
+  function handleClick(note) {
+    props.openNote(note);
+  }
+
   return (
     <div className="notes-area">
       <div className="row">
@@ -21,12 +25,12 @@ function NotesArea(props) {
           columnClassName="my-masonry-grid_column">
           {props.notes.map(note => {
             return (
-              <Note
-                key={note._id}
-                id={note._id}
-                title={note.title}
-                content={note.content}
-              />
+              <div key={note._id} onClick={() => handleClick(note)} >
+                <Note
+                  title={note.title}
+                  content={note.content}
+                />
+              </div>
             )
           })}
         </Masonry>
