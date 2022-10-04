@@ -154,11 +154,9 @@ textarea::-webkit-scrollbar-thumb {
   color: gray;
 }
 
-.modal-input .input-content {
-  min-height: 200px;
-}
-
+.modal-input .input-content,
 .modal-input p {
+  min-height: 200px;
   font-size: 1.1em;
   margin-bottom: 10px;
   white-space: pre-wrap;
