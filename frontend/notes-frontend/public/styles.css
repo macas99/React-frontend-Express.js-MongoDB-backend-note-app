@@ -32,7 +32,8 @@ form.input-area textarea {
   resize: none;
 }
 
-form.input-area button {
+form.input-area button,
+.modal-input button {
   border-radius: 100%;
   border: none;
   background-color: white;
@@ -73,6 +74,7 @@ textarea::-webkit-scrollbar-thumb {
 .note h1 {
   font-size: 1.1em;
   margin-bottom: 6px;
+  font-weight: 600;
 }
 
 .note p {
@@ -125,27 +127,61 @@ textarea::-webkit-scrollbar-thumb {
 
 .note-modal {
   background: #fff;
-  max-width: 80%;
-  max-height: 80%;
   min-width: 40%;
-  min-height: fit-content;
-  padding: 20px;
-  min-height: 200px;
+  min-height: 40%;
+  max-width: 480px;
+  max-height: 80%;
   border-radius: 15px;
-  padding: 10px;
+  padding: 20px;
+  padding: 25px;
+  padding-top: 15px;
   margin: 10px 10px;
 }
 
-.note-modal h1 {
-  font-size: 3em;
-  margin-bottom: 6px;
+.modal-input textarea {
+  width: 100%;
+  outline: none;
+  border: none;
+  resize: none;
 }
 
-.note-modal p {
+.modal-input [contenteditable] {
+  outline: 0px solid transparent;
+}
+
+.modal-input [contenteditable]:empty::before {
+  content: "Title...";
+  color: gray;
+}
+
+.modal-input .input-content {
+  min-height: 200px;
+}
+
+.modal-input p {
   font-size: 1.1em;
   margin-bottom: 10px;
   white-space: pre-wrap;
   word-wrap: break-word;
+}
+
+.close-modal-btn {
+  cursor: pointer;
+}
+
+#myContentEditable {
+  font-size: 2em;
+  font-weight: 600;
+  min-height: 1.5em;
+  max-height: 150px;
+  overflow: auto;
+  word-wrap: break-word;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+#myContentEditable::-webkit-scrollbar {
+  display: none;
 }
 
 @media only screen and (max-width: 560px) {
@@ -165,4 +201,12 @@ textarea::-webkit-scrollbar-thumb {
     margin: 0;
     padding: 0;
   }
+
+  .note-modal {
+    min-width: 90%;
+    min-height: 40%;
+    max-height: 80%;
+
+  }
+
 }
