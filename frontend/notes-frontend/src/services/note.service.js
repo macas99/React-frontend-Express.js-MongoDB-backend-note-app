@@ -20,6 +20,10 @@ class NoteService {
   patchNote(id, note) {
     return http.patch("/" + id, note);
   }
+
+  deleteNote(id) {
+    return http.delete("/" + id);
+  }
 }
 
 export default new NoteService();
