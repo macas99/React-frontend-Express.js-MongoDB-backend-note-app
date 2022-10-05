@@ -49,7 +49,7 @@ function App() {
     <div>
       <Navbar />
       <InputArea refreshNotes={refreshNotes} />
-      <NotesArea notes={notes} openNote={openNote} />
+      <NotesArea notes={notes} openNote={openNote} refreshNotes={refreshNotes} />
       {noteModal.isOpen && (
         <NoteModal
           title={noteModal.title}

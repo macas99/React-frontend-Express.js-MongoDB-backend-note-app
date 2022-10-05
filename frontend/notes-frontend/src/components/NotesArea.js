@@ -1,6 +1,8 @@
 import React from "react";
 import Note from "./Note";
-import Masonry from 'react-masonry-css'
+import Masonry from 'react-masonry-css';
+import noteService from "../services/note.service";
+
 
 function NotesArea(props) {
 
@@ -19,6 +21,17 @@ function NotesArea(props) {
     }
   }
 
+  function removeNote(id) {
+    noteService.deleteNote(id)
+      .then(response => {
+        console.log(response.data);
+        props.refreshNotes();
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  }
+
   return (
     <div className="notes-area">
       <div className="row">
@@ -32,6 +45,8 @@ function NotesArea(props) {
                 <Note
                   title={note.title}
                   content={note.content}
+                  id={note._id}
+                  removeNote={removeNote}
                 />
               </div>
             )
