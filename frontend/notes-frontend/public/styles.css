@@ -8,6 +8,22 @@ header p {
   color: #000;
   font-weight: 200;
   margin-bottom: 0;
+  margin-right: 30px;
+  margin-top: 5px;
+}
+
+header .search-bar {
+  width: 480px;
+}
+
+header .search-bar input {
+  border: none;
+  outline: none;
+  cursor: auto;
+  font-size: 1em;
+  font-family: inherit;
+  resize: none;
+  background-color: rgb(235, 235, 235);
 }
 
 form.input-area {
@@ -221,6 +237,21 @@ textarea::-webkit-scrollbar-thumb {
     min-height: 40%;
     max-height: 80%;
 
+  }
+
+}
+
+@media only screen and (max-width: 660px) {
+  header {
+    padding: 16px 25px;
+  }
+
+  header p {
+    margin-bottom: 5px;
+  }
+
+  header .search-bar {
+    width: 80%;
   }
 
 }
