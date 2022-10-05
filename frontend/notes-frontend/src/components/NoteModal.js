@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import CloseIcon from '@mui/icons-material/Close';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
+import noteService from "../services/note.service";
 
 function NoteModal(props) {
   const [note, setNote] = useState({
@@ -33,7 +34,15 @@ function NoteModal(props) {
       title: document.getElementById("myContentEditable").innerHTML
     }
 
-    console.log(editedNote);
+    noteService.patchNote(props.id, editedNote)
+      .then(response => {
+        console.log(response.data);
+        props.refreshNotes();
+      })
+      .catch(e => {
+        console.log(e);
+      });
+
     props.closeModal();
   }
 

@@ -13,10 +13,13 @@ class NoteService {
     return http.get();
   }
 
-  saveNote(note)  {
+  saveNote(note) {
     return http.post("/", note);
   }
 
+  patchNote(id, note) {
+    return http.patch("/" + id, note);
+  }
 }
 
-export default new NoteService;
+export default new NoteService();

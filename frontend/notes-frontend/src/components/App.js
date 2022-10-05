@@ -10,7 +10,8 @@ function App() {
   const [noteModal, setModal] = useState({
     isOpen: false,
     title: "",
-    content: ""
+    content: "",
+    id: 0
   });
 
   useEffect(() => {
@@ -27,9 +28,10 @@ function App() {
     setModal({
       isOpen: true,
       title: note.title,
-      content: note.content
+      content: note.content,
+      id: note._id
     });
-      document.body.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
   }
 
   function closeModal() {
@@ -49,7 +51,12 @@ function App() {
       <InputArea refreshNotes={refreshNotes} />
       <NotesArea notes={notes} openNote={openNote} />
       {noteModal.isOpen && (
-        <NoteModal title={noteModal.title} content={noteModal.content} closeModal={closeModal} />
+        <NoteModal
+          title={noteModal.title}
+          content={noteModal.content}
+          id={noteModal.id}
+          closeModal={closeModal}
+          refreshNotes={refreshNotes} />
       )}
     </div>
   );
