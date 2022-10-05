@@ -12,8 +12,11 @@ function NotesArea(props) {
     560: 1
   }
 
-  function handleClick(note) {
-    props.openNote(note);
+  function handleClick(e, note) {
+    //check if x-delete-button on top right is being clicked
+    if (e.target.parentNode.nodeName !== 'svg' && e.target.nodeName !== 'svg') {
+      props.openNote(note);
+    }
   }
 
   return (
@@ -25,7 +28,7 @@ function NotesArea(props) {
           columnClassName="my-masonry-grid_column">
           {props.notes.map(note => {
             return (
-              <div key={note._id} onClick={() => handleClick(note)} >
+              <div key={note._id} onClick={(event) => handleClick(event, note)} >
                 <Note
                   title={note.title}
                   content={note.content}

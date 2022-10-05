@@ -84,6 +84,21 @@ textarea::-webkit-scrollbar-thumb {
   word-wrap: break-word;
 }
 
+.note .delete {
+  float: right;
+  margin-top: -15px;
+  margin-right: -15px;
+  cursor: pointer;
+  display: none;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.note:hover .delete {
+  display: inline-block;
+}
+
 .noselect {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
