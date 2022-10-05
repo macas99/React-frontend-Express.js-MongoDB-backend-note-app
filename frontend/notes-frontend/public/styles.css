@@ -75,6 +75,7 @@ textarea::-webkit-scrollbar-thumb {
   font-size: 1.1em;
   margin-bottom: 6px;
   font-weight: 600;
+  word-wrap: break-word;
 }
 
 .note p {
