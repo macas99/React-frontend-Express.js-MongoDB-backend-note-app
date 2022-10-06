@@ -55,7 +55,14 @@ function NoteModal(props) {
 
         <form name="search-form" id="search-form" className="modal-input" onSubmit={onFormSubmit}>
 
-          <p name="title" id="myContentEditable" contentEditable="true" suppressContentEditableWarning={true}>{note.title}</p>
+          <p
+            name="title"
+            id="myContentEditable"
+            contentEditable="true"
+            spellcheck="false"
+            suppressContentEditableWarning={true}>
+            {note.title}
+          </p>
 
           <textarea
             className="input-content"
@@ -63,6 +70,7 @@ function NoteModal(props) {
             value={note.content}
             placeholder="Take a note..."
             onChange={handleChange}
+            spellcheck="false"
           />
 
           <div className="text-end">

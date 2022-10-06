@@ -41,6 +41,7 @@ function SearchBar(props) {
                 placeholder="Search"
                 aria-label="Search"
                 aria-describedby="search-addon"
+                spellcheck="false"
             />
         </div>
     );

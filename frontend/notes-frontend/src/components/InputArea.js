@@ -74,6 +74,7 @@ function InputArea(props) {
             value={note.title}
             onChange={handleChange}
             placeholder="Title"
+            spellcheck="false"
           />
         }
 
@@ -84,6 +85,7 @@ function InputArea(props) {
           onChange={handleChange}
           onClick={toggleOn}
           placeholder="Take a note..."
+          spellcheck="false"
         />
 
         {toggled &&
