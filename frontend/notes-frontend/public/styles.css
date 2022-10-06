@@ -191,7 +191,7 @@ textarea::-webkit-scrollbar-thumb {
   outline: 0px solid transparent;
 }
 
-.modal-input [contenteditable]:empty::before {
+.modal-input #myContentEditable:empty::before {
   content: "Title...";
   color: gray;
 }
@@ -299,6 +299,30 @@ textarea::-webkit-scrollbar-thumb {
 
   .note-modal {
     min-width: 90%;
+  }
+
+}
+
+@media only screen and (max-height: 560px) {
+  #myContentEditable {
+    max-height: 3em;
+  }
+}
+
+@media only screen and (max-height: 490px) {
+  .modal-input .input-content {
+    min-height: 150px;
+  }
+}
+
+@media only screen and (max-height: 435px) {
+  #myContentEditable {
+    max-height: 1.5em;
+  }
+
+  .modal-input .input-content,
+  .modal-input p {
+    min-height: auto;
   }
 
 }
