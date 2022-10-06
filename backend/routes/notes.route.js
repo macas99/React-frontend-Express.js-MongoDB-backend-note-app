@@ -9,6 +9,9 @@ router.route('/')
 router.route('/:id')
     .get(notesController.getOne);
 
+router.route('/search/:query')
+    .get(notesController.searchNote);
+
 router.route('/')
     .post(notesController.saveNote);
 

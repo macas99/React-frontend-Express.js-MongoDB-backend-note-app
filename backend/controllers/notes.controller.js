@@ -12,6 +12,15 @@ const getOne = function (req, res) {
         .catch(err => res.status(400).json('Error: ' + err));
 }
 
+const searchNote = function (req, res) {
+    const query = req.params.query;
+    if (query) {
+        Note.find({ $or: [{ title: { $regex: query, $options: 'i' } }, { content: { $regex: query, $options: 'i' } }] })
+            .then(notes => res.json(notes))
+            .catch(err => res.status(400).json('Error: ' + err));
+    }
+}
+
 const saveNote = function (req, res) {
     const title = req.body.title;
     const content = req.body.content;
@@ -48,6 +57,7 @@ const deleteNote = function (req, res) {
 module.exports = {
     getAll,
     getOne,
+    searchNote,
     saveNote,
     updateNote,
     deleteNote
