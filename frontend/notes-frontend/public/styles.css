@@ -74,6 +74,8 @@ textarea::-webkit-scrollbar-thumb {
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
+  /* default width for five columns */
+  width: 1300px;
 }
 
 .note {
@@ -214,31 +216,38 @@ textarea::-webkit-scrollbar-thumb {
   display: none;
 }
 
-@media only screen and (max-width: 560px) {
-  header {
-    padding: 16px 25px;
-  }
-
-  form.input-area {
-    width: 90vw;
-  }
-
-  .note {
-    width: 90vw;
-  }
-
-  .my-masonry-grid {
-    margin: 0;
-    padding: 0;
+/* four-columns-breakpoint: 1335px */
+@media only screen and (max-width: 1335px) {
+  .notes-area {
+    width: 1040px;
   }
 
   .note-modal {
-    min-width: 90%;
-    min-height: 40%;
-    max-height: 80%;
+    min-width: 50%;
+  }
+}
 
+/* three-columns-breakpoint: 1055px */
+@media only screen and (max-width: 1055px) {
+  .notes-area {
+    width: 780px;
   }
 
+  .note-modal {
+    min-width: 65%;
+  }
+
+}
+
+/* two-columns-breakpoint: 795px */
+@media only screen and (max-width: 795px) {
+  .notes-area {
+    width: 520px;
+  }
+
+  .note-modal {
+    min-width: 80%;
+  }
 }
 
 @media only screen and (max-width: 660px) {
@@ -252,6 +261,36 @@ textarea::-webkit-scrollbar-thumb {
 
   header .search-bar {
     width: 80%;
+  }
+
+}
+
+/* one-columns-breakpoint */
+@media only screen and (max-width: 560px) {
+  header {
+    padding: 16px 25px;
+  }
+
+  .notes-area {
+    width: 90vw;
+  }
+
+  form.input-area {
+    width: 90vw;
+  }
+
+  .note {
+    width: 90vw;
+    margin: 10px auto;
+  }
+
+  .my-masonry-grid {
+    margin: 0;
+    padding: 0;
+  }
+
+  .note-modal {
+    min-width: 90%;
   }
 
 }

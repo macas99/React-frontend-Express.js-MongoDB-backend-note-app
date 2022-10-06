@@ -34,25 +34,23 @@ function NotesArea(props) {
 
   return (
     <div className="notes-area">
-      <div className="row">
-        <Masonry
-          breakpointCols={breakpoints}
-          className="my-masonry-grid"
-          columnClassName="my-masonry-grid_column">
-          {props.notes.map(note => {
-            return (
-              <div key={note._id} onClick={(event) => handleClick(event, note)} >
-                <Note
-                  title={note.title}
-                  content={note.content}
-                  id={note._id}
-                  removeNote={removeNote}
-                />
-              </div>
-            )
-          })}
-        </Masonry>
-      </div>
+      <Masonry
+        breakpointCols={breakpoints}
+        className="my-masonry-grid"
+        columnClassName="my-masonry-grid_column">
+        {props.notes.map(note => {
+          return (
+            <div key={note._id} onClick={(event) => handleClick(event, note)} >
+              <Note
+                title={note.title}
+                content={note.content}
+                id={note._id}
+                removeNote={removeNote}
+              />
+            </div>
+          )
+        })}
+      </Masonry>
     </div>
 
   );
