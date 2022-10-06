@@ -2,14 +2,14 @@ import React from "react";
 import SearchBar from "./SearchBar";
 import CloudQueueIcon from '@mui/icons-material/CloudQueue';
 
-function Navbar() {
+function Navbar(props) {
   return (
     <header>
       <div className="input-group">
         <p>
           <CloudQueueIcon />
         </p>
-        <SearchBar />
+        <SearchBar setNotes={props.setNotes}/>
       </div>
     </header>
   );

@@ -24,6 +24,10 @@ class NoteService {
   deleteNote(id) {
     return http.delete("/" + id);
   }
+
+  findNote(query) {
+    return http.get("search/" + query);
+  }
 }
 
 export default new NoteService();

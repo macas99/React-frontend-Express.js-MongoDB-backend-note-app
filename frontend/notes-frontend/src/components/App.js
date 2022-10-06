@@ -47,7 +47,7 @@ function App() {
 
   return (
     <div>
-      <Navbar />
+      <Navbar setNotes={setNotes} />
       <InputArea refreshNotes={refreshNotes} />
       <NotesArea notes={notes} openNote={openNote} refreshNotes={refreshNotes} />
       {noteModal.isOpen && (
