@@ -114,6 +114,14 @@ textarea::-webkit-scrollbar-thumb {
   justify-content: center;
 }
 
+.note .note-content {
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .note:hover .delete {
   display: inline-block;
 }

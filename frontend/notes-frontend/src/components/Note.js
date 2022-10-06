@@ -8,7 +8,7 @@ function Note(props) {
         <CancelIcon />
       </div>
       <h1>{props.title}</h1>
-      <p>{props.content}</p>
+      <p className="note-content">{props.content}</p>
     </div>
   );
 }
